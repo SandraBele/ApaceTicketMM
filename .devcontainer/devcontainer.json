@@ -1,0 +1,31 @@
+{
+  "name": "ApaceTicket ERP System",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "forwardPorts": [3000, 3001, 8025, 5432, 6379],
+  "portsAttributes": {
+    "3000": {
+      "label": "ApaceTicket Web App",
+      "onAutoForward": "openBrowser"
+    },
+    "3001": {
+      "label": "API Documentation"
+    },
+    "8025": {
+      "label": "MailHog Email Testing"
+    }
+  },
+  "postCreateCommand": "chmod +x start-apaceticket.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.vscode-json",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-eslint"
+      ]
+    }
+  }
+}
