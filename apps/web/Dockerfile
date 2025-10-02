@@ -1,4 +1,7 @@
-FROM node:18-alpine
+FROM node:20-alpine
+
+# Install build tools for native dependencies
+RUN apk add --no-cache python3 make g++ bash
 
 WORKDIR /app
 
